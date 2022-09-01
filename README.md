@@ -31,7 +31,7 @@ Veha o protótipo de telas no <a href="https://www.figma.com/file/JTKVv6gBCGmkRL
 # clone o repositório
 $ git clone https://github.com/joaohouto/freqacad.git
 # vá para a pasta do projeto
-$ cd freqcad
+$ cd freqacad
 # instale as dependências
 $ npm install
 # inicie o projeto
