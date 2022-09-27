@@ -11,7 +11,7 @@ export const Header = styled.div`
   align-items: center;
   justify-content: flex-start;
 
-  background: #3277e0;
+  background: var(--primary);
   padding: 20px 5%;
 
   > img {

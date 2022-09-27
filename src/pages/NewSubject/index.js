@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
 import Button from "../../components/Button";
@@ -8,7 +8,7 @@ import { Container, Content, Header, Form } from "./styles";
 import { IconArrowLeft } from "@tabler/icons";
 
 export default function Subject() {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,7 +28,7 @@ export default function Subject() {
 
       alert("Nova disciplina criada!");
 
-      history.goBack();
+      navigate(-1);
     } catch (err) {
       alert("Erro ao criar nova disciplina.");
       console.log(err);
@@ -38,7 +38,7 @@ export default function Subject() {
   return (
     <Container>
       <Header>
-        <button onClick={() => history.goBack()}>
+        <button onClick={() => navigate(-1)}>
           <IconArrowLeft size={24} />
         </button>
       </Header>

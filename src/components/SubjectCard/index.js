@@ -1,29 +1,38 @@
 import React from "react";
-import { IconCircleCheck } from "@tabler/icons";
+import { IconCircleCheck, IconAlertCircle } from "@tabler/icons";
 
 import { Container, ProgressBar } from "./styles";
 
-export default function SubjectCard({ name, ...rest }) {
+export default function SubjectCard({
+  name,
+  presenceCount,
+  absenceCount,
+  workload,
+  ...rest
+}) {
   return (
     <Container {...rest}>
       <section>
         <strong>{name}</strong>
-        <IconCircleCheck size={24} />
+        {absenceCount / workload > 0.2 ? (
+          <IconAlertCircle size={20} />
+        ) : (
+          <IconCircleCheck size={20} />
+        )}
       </section>
 
       <section>
-        <ProgressBar type="presence">
-          <span>20%</span>
-          <div>
-            <div style={{ width: 100 }} />
-          </div>
-        </ProgressBar>
-
-        <ProgressBar type="absence">
-          <span>20%</span>
-          <div>
-            <div style={{ width: 100 }} />
-          </div>
+        <ProgressBar>
+          <div
+            style={{
+              width: `${(presenceCount / workload) * 100}%`,
+            }}
+          />
+          <div
+            style={{
+              width: `${(absenceCount / workload) * 100}%`,
+            }}
+          />
         </ProgressBar>
       </section>
     </Container>

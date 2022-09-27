@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
 import SubjectCard from "../../components/SubjectCard";
 import { Container, Content, Header, Button } from "./styles";
 
-import logoImg from "../../assets/logo.svg";
 import { IconCirclePlus } from "@tabler/icons";
+import logoImg from "../../assets/logo.svg";
 
 export default function Home() {
   const [subjects, setSubjects] = useState([]);
 
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSubjects();
@@ -27,40 +27,6 @@ export default function Home() {
     }
   };
 
-  const addSubject = async () => {
-    try {
-      const id = await db.subjects.add({
-        name: "Orientação a Objetos II",
-        workload: 68,
-        absenceMaxtTax: 0.25,
-        absenceCount: 0,
-        presencyCount: 0,
-      });
-
-      alert("Nova disciplina criada!");
-    } catch (err) {
-      alert("Erro ao criar nova disciplina.");
-      console.log(err);
-    }
-  };
-
-  const addPresency = async () => {
-    try {
-      await db.subjects.update(1, {
-        name: "Teste",
-        workload: 68,
-        absenceMaxtTax: 0.25,
-        absenceCount: 0,
-        presencyCount: 0,
-      });
-
-      alert("Nova disciplina criada!");
-    } catch (err) {
-      alert("Erro ao criar nova disciplina.");
-      console.log(err);
-    }
-  };
-
   return (
     <Container>
       <Header>
@@ -72,11 +38,14 @@ export default function Home() {
           <SubjectCard
             key={subject.id}
             name={subject.name}
-            onClick={() => history.push(`/subject/${subject.id}`)}
+            absenceCount={subject.absenceCount}
+            presenceCount={subject.presenceCount}
+            workload={subject.workload}
+            onClick={() => navigate(`/subject/${subject.id}`)}
           />
         ))}
 
-        <Button onClick={() => history.push("/subject/new")}>
+        <Button onClick={() => navigate("/subject/new")}>
           <IconCirclePlus size={24} /> Nova disciplina
         </Button>
       </Content>

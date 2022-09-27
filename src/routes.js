@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import GlobalStyle from "./themes/Global";
 
@@ -8,16 +8,16 @@ import Subject from "./pages/Subject";
 import NewSubject from "./pages/NewSubject";
 import NewEvent from "./pages/NewEvent";
 
-export default function Routes() {
+export default function MyRoutes() {
   return (
     <BrowserRouter>
       <GlobalStyle />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/subject/new" component={NewSubject} />
-        <Route exact path="/subject/:id" component={Subject} />
-        <Route exact path="/event/:id" component={NewEvent} />
-      </Switch>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/subject/new" element={<NewSubject />} />
+        <Route path="/subject/:id" element={<Subject />} />
+        <Route path="/event/:id" element={<NewEvent />} />
+      </Routes>
     </BrowserRouter>
   );
 }

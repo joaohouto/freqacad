@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../../database";
 
 import Button from "../../components/Button";
@@ -11,7 +11,7 @@ export default function Subject() {
   const [subject, setSubject] = useState({});
 
   const { id } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSubject();
@@ -47,7 +47,7 @@ export default function Subject() {
 
       alert("Registro adicionado!");
 
-      history.goBack();
+      navigate(-1);
     } catch (err) {
       alert("Erro ao adicionar registro.");
       console.log(err);
@@ -57,7 +57,7 @@ export default function Subject() {
   return (
     <Container>
       <Header>
-        <button onClick={() => history.goBack()}>
+        <button onClick={() => navigate(-1)}>
           <IconArrowLeft size={24} />
         </button>
       </Header>

@@ -12,6 +12,7 @@ export const Header = styled.div`
   justify-content: flex-start;
 
   padding: 20px 5%;
+  height: 80px;
 
   > button {
     display: flex;
@@ -28,7 +29,7 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 20px 5%;
+  padding: 16px 5%;
 
   > h1 {
     margin-bottom: 16px;
@@ -37,18 +38,6 @@ export const Content = styled.div`
   > p {
     margin-bottom: 40px;
     color: #777;
-  }
-
-  > section {
-    margin-bottom: 40px;
-
-    > label {
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: #999;
-      margin-bottom: 8px;
-    }
   }
 `;
 

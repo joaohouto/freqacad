@@ -28,22 +28,10 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 20px 5%;
+  padding: 16px 5%;
 
   > h1 {
     margin-bottom: 40px;
-  }
-
-  > section {
-    margin-bottom: 40px;
-
-    > label {
-      font-size: 12px;
-      text-transform: uppercase;
-      font-weight: 500;
-      color: #999;
-      margin-bottom: 8px;
-    }
   }
 `;
 

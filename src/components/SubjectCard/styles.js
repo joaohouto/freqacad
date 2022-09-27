@@ -28,39 +28,29 @@ export const Container = styled.div`
   }
 
   > section:last-child {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
     margin-top: 16px;
   }
 `;
 
 export const ProgressBar = styled.div`
-  > span {
-    font-weight: 500;
-    padding: 3px 5px;
-    border-radius: 8px;
-    font-size: 14px;
-    color: ${(props) =>
-      props.type === "presence" ? "var(--success)" : "var(--danger)"};
-    background: ${(props) =>
-      props.type === "presence"
-        ? "var(--success-transparent)"
-        : "var(--danger-transparent)"};
-  }
+  height: 5px;
+  width: 100%;
+  border-radius: 3px;
+  background: #f1f1f1;
+
+  display: flex;
 
   > div {
-    margin-top: 8px;
     height: 5px;
-    width: 100%;
-    background: #f1f1f1;
+    width: 0%;
     border-radius: 3px;
+  }
 
-    > div {
-      height: 5px;
-      background: ${(props) =>
-        props.type === "presence" ? "var(--success)" : "var(--danger)"};
-      border-radius: 3px;
-    }
+  > div:first-child {
+    background: var(--success);
+  }
+
+  > div:last-child {
+    background: var(--danger);
   }
 `;

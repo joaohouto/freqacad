@@ -1,21 +1,20 @@
 # freqacad
 
-O freqacad é um web app feito com Figma, ReactJS, Dexie.js e styled-components para o controle de frequências em disciplinas acadêmicas.
+O freqacad é um web app feito com ReactJS para o controle de frequências em disciplinas acadêmicas.
 
 Antes de qualquer coisa, é necessário ter o <a href="https://nodejs.org/en/">NodeJS</a> instalado em sua máquina.
 
 ### 📄 Requisitos funcionais
 
-- Adicionar disciplina;
-- Total de aulas no semestre (carga horária h/a);
-- Quantidade de faltas permitidas (em %);
+- Adicionar/remover disciplina;
+- Total de aulas no semestre (carga horária total e necessária h/a);
 - Relatar frequência/ausência para cada disciplina;
-- Obter estatísticas
+- Obter estatísticas;
 - Faltas/frequência relatadas e restantes;
 
 ### 🌌 Prototipação
 
-Veha o protótipo de telas no <a href="https://www.figma.com/file/JTKVv6gBCGmkRL8qKoHsFq/freqacad?node-id=0%3A1">Figma</a>.
+Veja o protótipo de telas no <a href="https://www.figma.com/file/JTKVv6gBCGmkRL8qKoHsFq/freqacad?node-id=0%3A1">Figma</a>.
 
 ### 🔗 Links úteis
 
@@ -31,7 +30,7 @@ Veha o protótipo de telas no <a href="https://www.figma.com/file/JTKVv6gBCGmkRL
 # clone o repositório
 $ git clone https://github.com/joaohouto/freqacad.git
 # vá para a pasta do projeto
-$ cd freqcad
+$ cd freqacad
 # instale as dependências
 $ npm install
 # inicie o projeto

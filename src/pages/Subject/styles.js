@@ -28,7 +28,7 @@ export const Header = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 20px 5%;
+  padding: 16px 5%;
 
   > h1 {
     margin-bottom: 40px;
@@ -69,10 +69,12 @@ export const ProgressBar = styled.div`
 
   > div:first-child {
     height: 50px;
-    width: 0;
+    width: 0%;
     background: ${(props) =>
       props.type === "presence" ? "var(--success)" : "var(--danger)"};
     border-radius: 8px;
+
+    transition: all 1s ease-in-out;
   }
 
   > div:last-child {

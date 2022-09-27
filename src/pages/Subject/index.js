@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
 import Button from "../../components/Button";
@@ -12,7 +12,7 @@ export default function Subject() {
   const [subject, setSubject] = useState({});
 
   const { id } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     getSubject();
@@ -33,17 +33,21 @@ export default function Subject() {
       try {
         await db.subjects.delete(parseInt(id));
         alert("Disciplina excluída!");
-        history.goBack();
+        navigate(-1);
       } catch (err) {
         console.log(err);
       }
     }
   };
 
+  const roundNumber = (number) => {
+    return Math.round(number * 100) / 100;
+  };
+
   return (
     <Container>
       <Header>
-        <button onClick={() => history.goBack()}>
+        <button onClick={() => navigate(-1)}>
           <IconArrowLeft size={24} />
         </button>
 
@@ -60,12 +64,15 @@ export default function Subject() {
 
           <div>
             <span>Necessária</span>{" "}
-            <strong>{subject?.workload * subject?.presenceMinTax}h/a</strong>
+            <strong>
+              {roundNumber(subject?.workload * subject?.presenceMinTax)}h/a
+            </strong>
           </div>
           <div>
             <span>Máximo de faltas</span>{" "}
             <strong>
-              {subject?.workload * (1 - subject?.presenceMinTax)}h/a
+              {roundNumber(subject?.workload * (1 - subject?.presenceMinTax))}
+              h/a
             </strong>
           </div>
           <div>
@@ -88,11 +95,13 @@ export default function Subject() {
             />
 
             <div>
-              <span>{subject?.presenceCount} Presenças</span>
+              <span>{subject?.presenceCount} presenças</span>
 
               <span>
-                {subject?.workload * subject?.presenceMinTax -
-                  subject?.presenceCount}{" "}
+                {roundNumber(
+                  subject?.workload * subject?.presenceMinTax -
+                    subject?.presenceCount
+                )}{" "}
                 restantes
               </span>
             </div>
@@ -110,11 +119,13 @@ export default function Subject() {
             />
 
             <div>
-              <span>{subject?.absenceCount} Faltas</span>
+              <span>{subject?.absenceCount} faltas</span>
 
               <span>
-                {subject?.workload * (1 - subject?.presenceMinTax) -
-                  subject?.absenceCount}{" "}
+                {roundNumber(
+                  subject?.workload * (1 - subject?.presenceMinTax) -
+                    subject?.absenceCount
+                )}{" "}
                 restantes
               </span>
             </div>
@@ -123,9 +134,7 @@ export default function Subject() {
 
         <AlertCard type="fine" />
 
-        <Button onClick={() => history.push(`/event/${id}`)}>
-          Novo registro
-        </Button>
+        <Button onClick={() => navigate(`/event/${id}`)}>Novo registro</Button>
       </Content>
     </Container>
   );
