@@ -1,6 +1,10 @@
 <img src="https://freqacad.web.app/banner.png" style="width:100%">
 
-O freqacad é um web app feito com ReactJS para o controle de frequências em disciplinas acadêmicas.
+<hr>
+
+> O freqacad é um web app feito com ReactJS para o controle de frequências em disciplinas acadêmicas.
+
+Veja o app em funcionamento em <a href="https://freqacad.web.app/">https://freqacad.web.app/</a>.
 
 Antes de qualquer coisa, é necessário ter o <a href="https://nodejs.org/en/">NodeJS</a> instalado em sua máquina.
 
@@ -14,19 +18,19 @@ Antes de qualquer coisa, é necessário ter o <a href="https://nodejs.org/en/">N
 
 ### 📄 Classes
 
-| subjects       |
-| -------------- |
-| id (PK)        |
-| name           |
-| presenceCount  |
-| absenceCount   |
-| presenceMinTax |
-| workload       |
+| subjects               |
+| ---------------------- |
+| id: integer (PK)       |
+| name: string           |
+| presenceCount: integer |
+| absenceCount: integer  |
+| presenceMinTax: float  |
+| workload: integer      |
 
 A única tabela que compõe o app é a de disciplinas (subjects).
 
 - id: índice de cada item salvo no banco;
-- name: o nome da discplina;
+- name: o nome da disciplina;
 - presenceCount: contagem de presenças;
 - absenceCount: contagem de ausências;
 - presenceMinTax: a porcentagem mínima de presença nas aulas para a aprovação;
@@ -43,7 +47,7 @@ A única tabela que compõe o app é a de disciplinas (subjects).
 
 Veja o protótipo de telas no <a href="https://www.figma.com/file/JTKVv6gBCGmkRL8qKoHsFq/freqacad?node-id=0%3A1">Figma</a>.
 
-Biblioteca de ícones: <a href="https://tabler-icons.io/">Tabler Icons</a>
+Biblioteca de ícones em <a href="https://tabler-icons.io/">Tabler Icons</a>.
 
 ### ⚡ Guia de início rápido
 
