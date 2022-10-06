@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
@@ -15,7 +15,7 @@ export default function Home() {
 
   useEffect(() => {
     getSubjects();
-  }, []);
+  });
 
   const getSubjects = async () => {
     try {
