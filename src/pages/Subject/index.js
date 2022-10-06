@@ -22,7 +22,6 @@ export default function Subject() {
     try {
       const subject = await db.subjects.get(parseInt(id));
       setSubject(subject);
-      console.log(subject);
     } catch (err) {
       console.log(err);
     }
@@ -57,7 +56,7 @@ export default function Subject() {
       </Header>
 
       <Content>
-        <h1>{subject?.name}</h1>
+        <h1>{subject.name}</h1>
 
         <Details>
           <label>Detalhes da carga horária</label>
@@ -65,18 +64,18 @@ export default function Subject() {
           <div>
             <span>Necessária</span>{" "}
             <strong>
-              {roundNumber(subject?.workload * subject?.presenceMinTax)}h/a
+              {roundNumber(subject.workload * subject.presenceMinTax)}h/a
             </strong>
           </div>
           <div>
             <span>Máximo de faltas</span>{" "}
             <strong>
-              {roundNumber(subject?.workload * (1 - subject?.presenceMinTax))}
+              {roundNumber(subject.workload * (1 - subject.presenceMinTax))}
               h/a
             </strong>
           </div>
           <div>
-            <span>Total</span> <strong>{subject?.workload}h/a</strong>
+            <span>Total</span> <strong>{subject.workload}h/a</strong>
           </div>
         </Details>
 
@@ -87,20 +86,20 @@ export default function Subject() {
             <div
               style={{
                 width: `${
-                  (subject?.presenceCount /
-                    (subject?.workload * subject?.presenceMinTax)) *
+                  (subject.presenceCount /
+                    (subject.workload * subject.presenceMinTax)) *
                   100
                 }%`,
               }}
             />
 
             <div>
-              <span>{subject?.presenceCount} presenças</span>
+              <span>{subject.presenceCount} presenças</span>
 
               <span>
                 {roundNumber(
-                  subject?.workload * subject?.presenceMinTax -
-                    subject?.presenceCount
+                  subject.workload * subject.presenceMinTax -
+                    subject.presenceCount
                 )}{" "}
                 restantes
               </span>
@@ -111,20 +110,20 @@ export default function Subject() {
             <div
               style={{
                 width: `${
-                  (subject?.absenceCount /
-                    (subject?.workload * (1 - subject?.presenceMinTax))) *
+                  (subject.absenceCount /
+                    (subject.workload * (1 - subject.presenceMinTax))) *
                   100
                 }%`,
               }}
             />
 
             <div>
-              <span>{subject?.absenceCount} faltas</span>
+              <span>{subject.absenceCount} faltas</span>
 
               <span>
                 {roundNumber(
-                  subject?.workload * (1 - subject?.presenceMinTax) -
-                    subject?.absenceCount
+                  subject.workload * (1 - subject.presenceMinTax) -
+                    subject.absenceCount
                 )}{" "}
                 restantes
               </span>
@@ -132,7 +131,7 @@ export default function Subject() {
           </ProgressBar>
         </section>
 
-        <AlertCard type="fine" />
+        <AlertCard subject={subject} />
 
         <Button onClick={() => navigate(`/event/${id}`)}>Novo registro</Button>
       </Content>

@@ -24,18 +24,23 @@ export const Container = styled.div`
   }
 `;
 
-const cardColors = {
-  fine: "var(--success)",
-  warning: "var(--alert)",
-  danger: "var(--warning)",
-  good: "var(--succes)",
-};
-
-const cardTransparentColors = {
-  fine: "var(--success-transparent)",
-  warning: "var(--alert-transparent)",
-  danger: "var(--warning-transparent)",
-  good: "var(--succes-transparent)",
+const cardTypes = {
+  fine: {
+    color: "var(--success)",
+    background: "var(--success-transparent)",
+  },
+  warning: {
+    color: "var(--warning)",
+    background: "var(--warning-transparent)",
+  },
+  flunked: {
+    color: "var(--danger)",
+    background: "var(--danger-transparent)",
+  },
+  passed: {
+    color: "var(--success)",
+    background: "var(--success-transparent)",
+  },
 };
 
 export const Icon = styled.div`
@@ -46,6 +51,6 @@ export const Icon = styled.div`
   min-width: 40px;
   height: 40px;
   border-radius: 8px;
-  color: ${(props) => cardColors[props.type]};
-  background: ${(props) => cardTransparentColors[props.type]};
+  color: ${(props) => cardTypes[props.type].color};
+  background: ${(props) => cardTypes[props.type].background};
 `;
