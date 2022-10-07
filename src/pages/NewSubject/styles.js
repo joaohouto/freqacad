@@ -53,3 +53,19 @@ export const Form = styled.form`
     margin: 8px 0 20px 0;
   }
 `;
+
+export const InfoCard = styled.div`
+  background: #f1f1f1;
+  padding: 16px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #222;
+  margin-bottom: 20px;
+
+  display: flex;
+
+  > svg {
+    margin-right: 16px;
+    min-width: 20px;
+  }
+`;

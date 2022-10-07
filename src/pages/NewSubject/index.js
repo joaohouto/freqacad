@@ -2,9 +2,9 @@ import { useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
 import Button from "../../components/Button";
-import { Container, Content, Header, Form } from "./styles";
+import { Container, Content, Header, Form, InfoCard } from "./styles";
 
-import { IconArrowLeft } from "@tabler/icons";
+import { IconArrowLeft, IconInfoCircle } from "@tabler/icons";
 
 export function NewSubject() {
   const navigate = useNavigate();
@@ -59,7 +59,7 @@ export function NewSubject() {
             required
           />
 
-          <label>Porcentagem de carga horária necessária</label>
+          <label>Porcentagem de carga horária necessária (%)</label>
           <input
             type="number"
             name="presenceMinTax"
@@ -69,6 +69,21 @@ export function NewSubject() {
             max={100}
             required
           />
+
+          <InfoCard>
+            <IconInfoCircle size={20} />
+            <p>
+              1 h/a (hora/aula) equivale a 1 tempo do quadro de horários do dia.
+            </p>
+          </InfoCard>
+
+          <InfoCard>
+            <IconInfoCircle size={20} />
+            <p>
+              Geralmente, escolas e universidades requisitam 75% de frequência
+              nas aulas para poder aprovar um aluno.
+            </p>
+          </InfoCard>
 
           <Button>Salvar</Button>
         </Form>

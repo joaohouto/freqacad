@@ -14,7 +14,7 @@ export default function SubjectCard({
     <Container {...rest}>
       <section>
         <strong>{name}</strong>
-        {absenceCount / workload > 0.2 ? (
+        {absenceCount / workload >= 0.2 ? (
           <IconAlertCircle size={20} />
         ) : (
           <IconCircleCheck size={20} />

@@ -21,7 +21,6 @@ export function Home() {
     try {
       const subjects = await db.subjects.toArray();
       setSubjects(subjects);
-      console.log(subjects);
     } catch (err) {
       console.log(err);
     }
