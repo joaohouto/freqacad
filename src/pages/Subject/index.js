@@ -8,8 +8,8 @@ import { Container, Content, Header, Details, ProgressBar } from "./styles";
 import { IconArrowLeft, IconTrash } from "@tabler/icons";
 import AlertCard from "../../components/AlertCard";
 
-export default function Subject() {
-  const [subject, setSubject] = useState({});
+export function Subject() {
+  let [subject, setSubject] = useState({});
 
   const { id } = useParams();
   const navigate = useNavigate();

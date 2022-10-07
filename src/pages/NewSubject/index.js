@@ -6,7 +6,7 @@ import { Container, Content, Header, Form } from "./styles";
 
 import { IconArrowLeft } from "@tabler/icons";
 
-export default function Subject() {
+export function NewSubject() {
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
