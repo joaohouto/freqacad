@@ -54,6 +54,26 @@ export const Form = styled.form`
   }
 `;
 
+export const Button = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 60px;
+  width: 100%;
+  border-radius: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+
+  > svg {
+    margin-right: 10px;
+  }
+`;
+
 export const InfoCard = styled.div`
   background: #f1f1f1;
   padding: 16px;

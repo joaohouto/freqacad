@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
-import Button from "../../components/Button";
-import { Container, Content, Header, Form, InfoCard } from "./styles";
+import { Container, Content, Header, Form, Button, InfoCard } from "./styles";
 
 import { IconArrowLeft, IconInfoCircle } from "@tabler/icons";
 

@@ -2,8 +2,14 @@ import { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { db } from "../../database";
 
-import Button from "../../components/Button";
-import { Container, Content, Header, Details, ProgressBar } from "./styles";
+import {
+  Container,
+  Content,
+  Header,
+  Details,
+  ProgressBar,
+  Button,
+} from "./styles";
 
 import { IconArrowLeft, IconTrash } from "@tabler/icons";
 import AlertCard from "../../components/AlertCard";

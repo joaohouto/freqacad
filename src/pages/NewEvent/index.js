@@ -2,8 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { db } from "../../database";
 
-import Button from "../../components/Button";
-import { Container, Content, Header, Form } from "./styles";
+import { Container, Content, Header, Form, Button } from "./styles";
 
 import { IconArrowLeft } from "@tabler/icons";
 
