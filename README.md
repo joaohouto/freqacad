@@ -4,9 +4,9 @@
 
 > O freqacad é um web app feito com ReactJS para o controle de frequências em disciplinas acadêmicas.
 
-Veja o app em funcionamento em <a href="https://freqacad.web.app/">https://freqacad.web.app/</a>.
+Acesse as orientações do minicurso em <a href="https://bit.ly/sct-react">https://bit.ly/sct-react</a>.
 
-Antes de qualquer coisa, é necessário ter o <a href="https://nodejs.org/en/">NodeJS</a> instalado em sua máquina.
+Veja o app em funcionamento em <a href="https://freqacad.web.app/">https://freqacad.web.app/</a>.
 
 ### 📄 Requisitos funcionais
 
@@ -51,7 +51,7 @@ Biblioteca de ícones em <a href="https://tabler-icons.io/">Tabler Icons</a>.
 
 ### ⚡ Guia de início rápido
 
-É necessário ter o <a href="https://git-scm.com/downloads">GIT</a> instalado em sua máquina. Depois disso, no terminal/cmd/Prompt de Comando:
+Antes de qualquer coisa, é necessário ter o <a href="https://nodejs.org/en/">NodeJS</a> e o <a href="https://git-scm.com/downloads">GIT</a> instalados em sua máquina. Depois disso, no terminal/cmd/Prompt de Comando:
 
 ```bash
 # clone o repositório

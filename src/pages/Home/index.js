@@ -8,8 +8,8 @@ import { Container, Content, Header, Button } from "./styles";
 import { IconCirclePlus } from "@tabler/icons";
 import logoImg from "../../assets/logo.svg";
 
-export default function Home() {
-  const [subjects, setSubjects] = useState([]);
+export function Home() {
+  let [subjects, setSubjects] = useState([]);
 
   const navigate = useNavigate();
 

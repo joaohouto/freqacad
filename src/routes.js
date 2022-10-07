@@ -3,10 +3,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import GlobalStyle from "./themes/Global";
 
-import Home from "./pages/Home";
-import Subject from "./pages/Subject";
-import NewSubject from "./pages/NewSubject";
-import NewEvent from "./pages/NewEvent";
+import { Home } from "./pages/Home";
+import { Subject } from "./pages/Subject";
+import { NewSubject } from "./pages/NewSubject";
+import { NewEvent } from "./pages/NewEvent";
 
 export default function MyRoutes() {
   return (

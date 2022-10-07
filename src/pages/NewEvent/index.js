@@ -6,8 +6,8 @@ import { Container, Content, Header, Form, Button } from "./styles";
 
 import { IconArrowLeft } from "@tabler/icons";
 
-export default function Subject() {
-  const [subject, setSubject] = useState({});
+export function NewEvent() {
+  let [subject, setSubject] = useState({});
 
   const { id } = useParams();
   const navigate = useNavigate();
